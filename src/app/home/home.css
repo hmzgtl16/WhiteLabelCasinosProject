@@ -1,0 +1,53 @@
+.layout-wrapper {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(farthest-corner at 50% 100%, #ffffff 0%, #fd7914 0%, #f67513 0%, #000000 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 1024px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+}
+
+.card-text-content {
+  background-color: #111;
+  color: #fd7914;
+  padding: 2rem;
+  height: 100%;
+}
+
+.card-text-content p {
+  color: #fff;
+}
+
+.social-icons i {
+  color: white;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.responsive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Stack height for vertical layout on mobile */
+@media (max-width: 767.98px) {
+  .card {
+    height: auto !important;
+  }
+}
