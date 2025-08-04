@@ -1,12 +1,23 @@
-.layout-wrapper {
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.layout-wrapper {
+  margin: 0;
+  padding: 1rem;
   background: radial-gradient(farthest-corner at 50% 100%, #ffffff 0%, #fd7914 0%, #f67513 0%, #000000 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
 }
 
 .card-container {
@@ -14,28 +25,106 @@
   max-width: 1024px;
   border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .card {
   border: none;
   border-radius: 0;
+  height: 400px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .card-text-content {
-  background-color: #111;
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
   color: #fd7914;
   padding: 2rem;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(253, 121, 20, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+  }
+
+  p {
+    color: #fff;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+  }
 }
 
-.card-text-content p {
-  color: #fff;
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-.social-icons i {
-  color: white;
-  margin-right: 10px;
-  font-size: 1.2rem;
+.social-icons {
+  position: relative;
+  z-index: 2;
+
+  a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(253, 121, 20, 0.8);
+      transform: scale(1.1);
+    }
+
+    svg {
+      transition: fill 0.3s ease;
+    }
+  }
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(253, 121, 20, 0.3), rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 .responsive-img {
@@ -43,11 +132,125 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
-/* Stack height for vertical layout on mobile */
-@media (max-width: 767.98px) {
+.image-card:hover .responsive-img {
+  transform: scale(1.05);
+}
+
+.img-action-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fd7914;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: 2px solid #fd7914;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+
+  &:hover {
+    background: #fd7914;
+    color: #000;
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 0 5px 15px rgba(253, 121, 20, 0.4);
+    animation: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(253, 121, 20, 0.3);
+  }
+}
+
+.telegram-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .telegram-icon {
+    font-size: 4rem;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .telegram-icon {
+    opacity: 1;
+  }
+}
+
+.casino-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .casino-icon {
+    font-size: 4rem;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .casino-icon {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(253, 121, 20, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(253, 121, 20, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(253, 121, 20, 0); }
+}
+
+@media (max-width: 768px) {
+  .layout-wrapper {
+    padding: 0.5rem;
+  }
+
   .card {
-    height: auto !important;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .card-text-content {
+    padding: 1.5rem;
+
+    h4 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .img-action-btn {
+    display: flex !important;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .img-action-btn {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  .image-card:hover .img-action-btn {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
