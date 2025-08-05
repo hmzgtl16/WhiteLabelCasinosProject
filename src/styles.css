@@ -2,18 +2,40 @@
 
 @font-face {
   font-family: 'Helvetica';
-  src: url('/fonts/Helvetica.ttf') format('ttf');
+  src: url('/fonts/Helvetica.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Helvetica';
-  src: url('/fonts/Helvetica-Bold.ttf') format('ttf');
+  src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
-* {
-  font-family: 'Helvetica', Arial, sans-serif;
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-BoldOblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('/fonts/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Apply Helvetica globally */
+body {
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
 }
