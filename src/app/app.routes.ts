@@ -15,5 +15,5 @@ export const routes: Routes = [
   { path: 'giveaways', component: Giveaways },
   { path: 'offers', component: Offers },
   { path: 'casino', component: Casino },
-  { path: 'ambassador', component: Ambassador },
+  { path: 'ambassador', component: Ambassador }
 ];

@@ -1,4 +1,4 @@
-<div class="row vh-100 g-0">
+<div class="row vh-100 g-0 overflow-scroll">
   <!-- Sidebar -->
   <div class="col-md-4 d-md-block d-none">
     <div class="sidebar h-100">
@@ -87,7 +87,7 @@
   <div class="d-md-none">
 
     <div class="row">
-      <button class="fab-button w-75" type="button" [ngClass]="{'fab-button-hidden': isSheetOpen}"
+      <button class="btn fab-button mx-auto text-center px-3 py-2 fw-medium" type="button" [ngClass]="{'fab-button-hidden': isSheetOpen}"
               data-bs-toggle="offcanvas" data-bs-target="#bottomSheet" aria-controls="bottomSheet">
         <span class="px-1 fw-bolder">Our Offers</span>
         <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="currentColor">
@@ -97,7 +97,7 @@
       </button>
     </div>
 
-    <div #bottomSheet class="offcanvas offcanvas-bottom mx-3 my-5" tabindex="-1" id="bottomSheet"
+    <div #bottomSheet class="offcanvas offcanvas-bottom col-sm-8 mx-sm-auto mx-3 my-5" tabindex="-1" id="bottomSheet"
          aria-labelledby="bottomSheetLabel">
 
       <div class="offcanvas-body mx-auto">

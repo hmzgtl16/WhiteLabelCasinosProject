@@ -101,7 +101,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  border: 1px solid #333;
+  border: 1px solid #999999;
 }
 
 .crypto-image {
@@ -167,13 +167,12 @@ body {
   z-index: 1050;
 
   /* Pill shape and padding */
-  height: 60px;
-  padding: 0 24px;
+  width: 80%;
   border-radius: 30px;
 
-  background-color: #999; /* Orange accent color */
+  background-color: #322926; /* Orange accent color */
+  background-blend-mode: normal;
   color: #FD7914;
-  font-size: 1rem;
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -181,13 +180,7 @@ body {
   justify-content: center;
   cursor: pointer;
   gap: 10px;
-  opacity: 0.9;
-
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.fab-button span {
-  font-weight: 600;
+  opacity: 80%;
 }
 
 .fab-button-hidden {

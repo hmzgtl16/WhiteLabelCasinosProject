@@ -77,7 +77,7 @@
           <!-- Crypto Projects Card -->
           <div class="col-md-5">
             <div class="offer-card">
-              <div class="offer-image crypto-image"></div>
+              <div class="offer-image border-opacity-25 crypto-image"></div>
               <div class="offer-content">
                 <h3 class="offer-title">Get Access to Crypto Projects</h3>
                 <p class="offer-description">
@@ -140,9 +140,9 @@
   <div class="d-md-none">
 
     <div class="row">
-      <button class="fab-button w-75" type="button" [ngClass]="{'fab-button-hidden': isSheetOpen}"
+      <button class="btn fab-button mx-auto text-center px-3 py-2 fw-medium" type="button" [ngClass]="{'fab-button-hidden': isSheetOpen}"
               data-bs-toggle="offcanvas" data-bs-target="#bottomSheet" aria-controls="bottomSheet">
-        <span class="px-1 fw-bolder">Our Offers</span>
+        <span class="px-1">Our Offers</span>
         <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="currentColor">
           <path
             d="M480-528 324-373q-11 11-27.5 11.5T268-373q-11-11-11-28t11-28l184-184q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l184 184q11 11 11.5 27.5T692-373q-11 11-28 11t-28-11L480-528Z"/>
@@ -150,7 +150,7 @@
       </button>
     </div>
 
-    <div #bottomSheet class="offcanvas offcanvas-bottom mx-3 my-5" tabindex="-1" id="bottomSheet"
+    <div #bottomSheet class="offcanvas offcanvas-bottom col-sm-8 mx-sm-auto col-sm-8 mx-sm-auto mx-3 my-5" tabindex="-1" id="bottomSheet"
          aria-labelledby="bottomSheetLabel">
 
       <div class="offcanvas-body mx-auto">

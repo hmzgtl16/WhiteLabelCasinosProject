@@ -142,7 +142,7 @@
   white-space: nowrap;
   cursor: pointer;
   animation: pulse 2s infinite;
-  background-color: #70615a;
+  background-color: #999999;
   opacity: 0.6;
 
   &:hover {
@@ -165,7 +165,7 @@
   justify-content: center;
   position: relative;
 
-  .telegram-icon {
+  telegram-icon {
     font-size: 4rem;
     color: white;
     opacity: 0.8;
@@ -235,5 +235,41 @@
   .image-card:hover .img-action-btn {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+  }
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  z-index: 1050;
+
+  /* Pill shape and padding */
+  width: 80%;
+  border-radius: 30px;
+
+  background-color: #322926; /* Orange accent color */
+  background-blend-mode: normal;
+  color: #FD7914;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 10px;
+  opacity: 80%;
+}
+
+.fab-button-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 50px);
+}
+
+@media (min-width: 768px) {
+  .fab-button {
+    display: none !important;
   }
 }
