@@ -1,1 +1,27 @@
-<router-outlet />
+@if (showSidebar) {
+  <div class="row vh-100 g-0">
+
+    <!-- Sidebar -->
+    <div class="col-md-3 position-fixed">
+      <div class="d-md-block d-none h-100">
+        <app-sidebar/>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 ms-md-auto">
+      <router-outlet/>
+    </div>
+  </div>
+
+  <!-- Bottom Sheet Section -->
+  <div class="position-fixed bottom-0 ">
+    <app-bottom-sheet/>
+  </div>
+} @else {
+  <div class="row vh-100 g-0">
+    <div class="col-12">
+      <router-outlet/>
+    </div>
+  </div>
+}

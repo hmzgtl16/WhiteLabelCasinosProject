@@ -5,8 +5,7 @@ import {NgClass} from '@angular/common';
 @Component({
   selector: 'app-giveaways',
   imports: [
-    RouterLink,
-    NgClass
+
   ],
   templateUrl: './giveaways.html',
   styleUrl: './giveaways.css'
