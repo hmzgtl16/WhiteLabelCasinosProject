@@ -5,7 +5,7 @@
   transform: translateX(-50%);
   border-radius: 30px;
   border: none;
-  max-width: 80%;
+  width: 80%;
 
   background-color: #322926; /* Orange accent color */
   background-blend-mode: normal;

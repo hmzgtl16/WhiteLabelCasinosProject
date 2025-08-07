@@ -4,37 +4,37 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb" style="--bs-breadcrumb-divider-color: #fd7914">
         <li class="breadcrumb-item">
-          <a routerLink="/home" class="link-underline link-underline-opacity-0" style="color: #fcfcfc">Home</a>
+          <a (click)="navigateToHome()" class="link-underline link-underline-opacity-0" style="color: #fcfcfc">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          <a routerLink="/home" class="link-underline link-underline-opacity-0" style="color: #fd7914">Community</a>
+          <a (click)="navigateToCommunity()" class="link-underline link-underline-opacity-0" style="color: #fd7914">Community</a>
         </li>
       </ol>
     </nav>
 
     <!-- Navigation Items -->
     <div class="sidebar-nav">
-      <a routerLink="/offers" class="d-flex pt-3 sidebar-item">
+      <a (click)="navigateToOffers()" class="d-flex pt-3 sidebar-item">
         <img src="icons/chivron-right.svg">
         <span class="px-2">Daily updates on the best exclusive bonus offers</span>
       </a>
 
-      <a routerLink="/casino" class="d-flex pt-3 sidebar-item">
+      <a (click)="navigateToCasino()" class="d-flex pt-3 sidebar-item">
         <img src="icons/chivron-right.svg">
         <span class="px-2">Private one-on-one calls with casino insider</span>
       </a>
 
-      <a routerLink="/crypto" class="d-flex pt-3 sidebar-item">
+      <a (click)="navigateToCrypto()" class="d-flex pt-3 sidebar-item">
         <img src="icons/chivron-right.svg">
         <span class="px-2">Get Access to Crypto Projects</span>
       </a>
 
-      <a routerLink="/giveaways" class="d-flex pt-3 sidebar-item">
+      <a (click)="navigateToGiveaways()" class="d-flex pt-3 sidebar-item">
         <img src="icons/chivron-right.svg">
         <span class="px-2">VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
       </a>
 
-      <a routerLink="/ambassador" class="d-flex py-3 sidebar-item">
+      <a (click)="navigateToAmbassador()" class="d-flex py-3 sidebar-item">
         <img src="icons/chivron-right.svg">
         <span class="px-2">An optional ambassador program with rewards for active members</span>
       </a>

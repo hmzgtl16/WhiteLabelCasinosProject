@@ -71,6 +71,10 @@
   .main-content {
     padding: 2rem 1rem;
   }
+
+  .ggg {
+    display: none;
+  }
 }
 
 .offer-image:hover  {

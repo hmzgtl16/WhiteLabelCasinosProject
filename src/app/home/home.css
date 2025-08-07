@@ -4,12 +4,6 @@
   height: 100%;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .layout-wrapper {
   margin: 0;
   padding: 1rem;
@@ -22,14 +16,20 @@
 
 .card-container {
   max-width: 1024px;
+  height: 500px;
   background: none;
 }
 
 .text-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border: none;
   border-radius: 0;
   width: 100%;
-  height: 440px;
+  height: 100%;
 }
 
 .text-card-content {
@@ -41,12 +41,14 @@
   overflow: hidden;
 
   h4 {
+    font-size: 42px;
     margin-bottom: 1rem;
     position: relative;
     z-index: 2;
   }
 
   p {
+    font-size: 18px;
     position: relative;
     z-index: 2;
   }
@@ -58,8 +60,6 @@
 
   a {
     display: inline-block;
-    margin: 0 5px;
-    padding: 8px;
     border-radius: 50%;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -80,7 +80,7 @@
   border: none;
   border-radius: 0;
   width: 100%;
-  height: 440px;
+  height: 100%;
 }
 
 .image-card img {
@@ -95,7 +95,6 @@
   right: 0;
   bottom: 0;
   backdrop-filter: blur(10px) brightness(0.4);
-  -webkit-backdrop-filter: blur(10px) brightness(0.4);
   background: linear-gradient(45deg, rgba(253, 121, 20, 0.3), rgba(0, 0, 0, 0.3));
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -117,7 +116,6 @@
 
 .overlay-smoky {
   backdrop-filter: blur(15px) brightness(0.3) contrast(1.2);
-  -webkit-backdrop-filter: blur(15px) brightness(0.3) contrast(1.2);
   background: rgba(20, 20, 20, 0.6);
 }
 
@@ -192,17 +190,16 @@
     padding: 0.5rem;
   }
 
-  .card {
-    height: auto;
-    min-height: 400px;
-  }
-
   .card-text-content {
     padding: 1.5rem;
 
     h4 {
-      font-size: 1.25rem;
+      font-size: 34px;
     }
+
+    p {
+      font-size: 14px;
+    };
   }
 
   .img-action-btn {
@@ -210,12 +207,17 @@
     font-size: 0.9rem;
     padding: 10px 20px;
   }
-}
 
-@media (min-width: 769px) {
-  .img-action-btn {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px);
+  .overlay {
+    display: none !important;
+  }
+
+  .image-card:hover img {
+    transform: none !important;
+  }
+
+  .text-card {
+    position: relative;
   }
 }
 
@@ -223,14 +225,8 @@
   .fab-button {
     display: none !important;
   }
-}
-
-@media (max-width: 768px) {
-  .overlay {
-    display: none !important;
-  }
-
-  .image-card:hover img {
-    transform: none !important;
+  .img-action-btn {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
   }
 }
