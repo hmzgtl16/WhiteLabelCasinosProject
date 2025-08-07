@@ -1,0 +1,32 @@
+.sidebar {
+  background: #171717;
+  background-blend-mode: normal;
+  border-color: #171717;
+  backdrop-filter: blur(5px) brightness(15%) opacity(0%);
+
+  padding: 4rem 1.5rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  color: #fcfcfc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.sidebar-item img {
+  width: 16px;
+  height: 16px;
+}
+.sidebar-item:hover {
+  color: #fd7914;
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+}
+
