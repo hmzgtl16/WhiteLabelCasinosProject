@@ -77,5 +77,5 @@
 .bg-blur {
   background-color: rgba(255, 255, 255, 0.1); /* Orange accent color */
   background-blend-mode: normal;
-  backdrop-filter: blur(37px) brightness(115%) !important;
+  backdrop-filter: blur(37px) brightness(65%) !important;
 }
