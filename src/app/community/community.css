@@ -1,8 +1,3 @@
-.main-content {
-  min-height: 100vh;
-  padding: 3rem 2rem;
-}
-
 .hero-title {
   font-size: 42px;
   font-weight: bold;
@@ -31,16 +26,15 @@
 .offer-card {
   overflow: hidden;
   position: relative;
-  transition: all 0.3s ease;
   height: 100%;
 }
 
 .offer-image {
-  width: auto;
-  height: 200px;
+  max-width: 500px;
+  height: 250px;
   overflow: hidden;
-  border-radius: 1rem;
-  border: 1px solid #100d0d;
+  border-radius: 22px;
+  border: 1px solid #959595;
 }
 
 .offer-image img {
@@ -48,6 +42,10 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+.offer-content {
+  max-width: 400px;
 }
 
 .offer-title {
@@ -63,20 +61,6 @@
   text-align: justify-all;
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .main-content {
-    padding: 2rem 1rem;
-  }
-
-  .ggg {
-    display: none;
-  }
-}
-
 .offer-image:hover  {
   opacity: 1;
 }
@@ -85,7 +69,17 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .offer-image {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
   .hero-title {
     font-size: 34px;
   }
@@ -94,3 +88,23 @@
     font-size: 12px;
   }
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .offer-image {
+    height: 180px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .offer-image {
+    height: 180px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .offer-image {
+    height: 300px;
+  }
+}
+
+

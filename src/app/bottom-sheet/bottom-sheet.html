@@ -1,52 +1,60 @@
 @if (isButtonVisible) {
-  <div class="row mb-3">
-    <div>
-      <button class="btn btn-fab mx-auto text-center px-3 py-2 fw-medium" type="button"
-              (click)="showBottomSheet()">
-        <span class="fw-bold px-2">Our Offers</span>
-        <img src="icons/chevron-up.svg">
-      </button>
+  <div class="container fixed-bottom">
+    <div class="row justify-content-center align-items-center mb-4">
+      <div class="col-auto"></div>
+      <div class="d-flex w-auto align-items-center">
+        <button class="btn icon-btn-fab bg-blur position-relative p-0" type="button" (click)="navigateBack()">
+          <img src="icons/chevron-left.svg" alt="">
+        </button>
+      </div>
+      <div class="d-flex w-50">
+        <button class="btn btn-fab bg-blur position-relative w-100" type="button" (click)="showBottomSheet()">
+          <span class="pe-2">Our Offers</span>
+          <img src="icons/chevron-up.svg" alt="">
+        </button>
+      </div>
+      <div class="col-auto"></div>
     </div>
   </div>
 }
 
 @if (isSheetVisible) {
-  <div class="col-sm-8 off-canvas off-canvas-bottom mx-sm-auto mx-3 my-5"
-       tabindex="-1" id="bottomSheet" aria-labelledby="bottomSheetLabel">
+  <div class="container fixed-top h-100 pb-5">
+    <div class="col-sm-9 off-canvas bg-blur mx-sm-auto mx-3 my-4 h-100">
+      <div class="off-canvas-body mx-auto px-3 py-5">
+        <div class="my-4">
+          <a (click)="navigateToOffers()" class="sidebar-item py-4">
+            <img src="icons/chevron-right.svg" alt="">
+            <span class="ps-2">Daily updates on the best exclusive bonus offers</span>
+          </a>
 
-    <div class="off-canvas-body mx-auto">
-      <div class="sidebar-nav">
-        <a (click)="navigateToOffers()" class="sidebar-item fw-medium">
-          <img src="icons/chevron-right.svg">
-          <span class="ps-2">Daily updates on the best exclusive bonus offers</span>
-        </a>
+          <a (click)="navigateToCasino()" class="sidebar-item 4">
+            <img src="icons/chevron-right.svg" alt="">
+            <span class="ps-2">Private one-on-one calls with casino insider</span>
+          </a>
 
-        <a (click)="navigateToCasino()" class="sidebar-item fw-medium">
-          <img src="icons/chevron-right.svg">
-          <span class="ps-2">Private one-on-one calls with casino insider</span>
-        </a>
+          <a (click)="navigateToCrypto()" class="sidebar-item py-4">
+            <img src="icons/chevron-right.svg" alt="">
+            <span class="ps-2">Get Access to Crypto Projects</span>
+          </a>
 
-        <a (click)="navigateToCrypto()" class="sidebar-item fw-medium">
-          <img src="icons/chevron-right.svg">
-          <span class="ps-2">Get Access to Crypto Projects</span>
-        </a>
+          <a (click)="navigateToGiveaways()" class="sidebar-item py-4">
+            <img src="icons/chevron-right.svg" alt="">
+            <span class="ps-2">VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
+          </a>
 
-        <a (click)="navigateToGiveaways()" class="sidebar-item fw-medium">
-          <img src="icons/chevron-right.svg">
-          <span class="ps-2">VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
-        </a>
-
-        <a (click)="navigateToAmbassador()" class="sidebar-item fw-medium border-bottom-0">
-          <img src="icons/chevron-right.svg">
-          <span class="ps-2">An optional ambassador program with rewards for active members</span>
-        </a>
+          <a (click)="navigateToAmbassador()" class="sidebar-item py-4 border-bottom-0">
+            <img src="icons/chevron-right.svg" alt="">
+            <span class="ps-2">An optional ambassador program with rewards for active members</span>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="off-canvas-footer">
-      <button class="btn mx-auto border-0" type="button" (click)="hideBottomSheet()">>
-        <img src="icons/chevron-down.svg">
-      </button>
+      <div class="off-canvas-footer position-fixed bottom-0 end-0 py-3 w-100">
+        <button class="btn mx-auto border-0" type="button" (click)="hideBottomSheet()">
+          <img src="icons/chevron-down.svg" alt="">
+        </button>
+      </div>
     </div>
   </div>
 }

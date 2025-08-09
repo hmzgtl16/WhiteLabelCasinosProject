@@ -1,43 +1,43 @@
 <div class="layout-wrapper">
-  <div class="row h-auto g-0 justify-content-md-center card-container overflow-hidden rounded-4">
+  <div class="row gx-0 h-auto justify-content-md-center card-container overflow-hidden">
 
     <!-- Text Panel -->
-    <div class="col-md-4 col-sm-8 mx-auto">
+    <div class="col-11 col-md-4 col-sm-8 mx-auto">
         <div class="image-card">
           <img src="images/casino-artboard.jpg" class="d-none img-fluid">
           <div class="text-card">
-            <div class="text-card-content d-flex flex-column justify-content-between h-100">
-              <div class="text-md-end text-start mt-4">
-                <h4 class="fw-bolder fs-1 text-uppercase mt-3">
-                  WHITE LABEL<br>
-                  CASINOS<br>
-                  PROJECT
-                </h4>
-                <p class="mt-3">
-                  Welcome to our private casino hub<br>
-                  Join us to access exclusive bonus offers, early crypto and NFT projects — all in one trusted place.
-                </p>
+            <div class="text-card-content align-bottom d-flex flex-column h-100">
+              <div class="flex-grow-1">
               </div>
-              <div class="text-card-icons text-md-end text-start mt-2">
-                <a (click)="openInstagram()" class="px-2" role="button" tabindex="0">
-                  <img src="icons/instagram.svg">
-                </a>
+                <div class="text-md-end text-start mt-4">
+                  <p class="title text-uppercase mt-3">
+                    WHITE LABEL CASINOS PROJECT
+                  </p>
+                  <p class="description mt-3">
+                    Welcome to our private casino hub<br>
+                    Join us to access exclusive bonus offers, early crypto and NFT projects — all in one trusted place.
+                  </p>
+                </div>
+                <div class="text-card-icons text-md-end text-start mt-2">
+                  <a (click)="openInstagram()" class="px-2" role="button" tabindex="0">
+                    <img src="icons/instagram.svg">
+                  </a>
 
-                <a (click)="openFacebook()" class="px-2" role="button" tabindex="0">
-                  <img src="icons/facebook.svg">
-                </a>
+                  <a (click)="openFacebook()" class="px-2" role="button" tabindex="0">
+                    <img src="icons/facebook.svg">
+                  </a>
 
-                <a (click)="openEmail()" class="px-2" role="button" tabindex="0">
-                  <img src="icons/email.svg">
-                </a>
-              </div>
+                  <a (click)="openEmail()" class="px-2" role="button" tabindex="0">
+                    <img src="icons/email.svg">
+                  </a>
+                </div>
             </div>
           </div>
         </div>
     </div>
 
     <!-- Telegram Panel -->
-    <div class="col-md-4 col-sm-8 mx-auto" #telegram>
+    <div class="col-11 col-sm-8 col-md-4 mx-auto mb-1 mb-md-0" #telegram>
       <a (click)="joinTelegram()">
         <div class="image-card">
           <img src="images/telegram-artboard.jpg" class="img-fluid">
@@ -51,7 +51,7 @@
     </div>
 
     <!-- Casino Panel -->
-    <div class="col-md-4 col-sm-8 mx-auto" #casino>
+    <div class="col-11 col-sm-8 col-md-4 mx-auto" #casino>
       <a routerLink="/community">
         <div class="image-card">
           <img src="images/casino-artboard.jpg" class="img-fluid">
@@ -68,11 +68,13 @@
     <div class="d-md-none">
       @if (activeCard) {
         <div class="row">
-          <button class="btn fab-button mx-auto text-center px-3 py-2 fw-medium" [class.external]="activeCard === 1"
-                  [class.internal]="activeCard === 2" (click)="navigateToDestination()">
-            <span class="fw-bold px-1" style="font-size: 14px">{{ fabText() }}</span>
-            <img src="icons/telegram.svg">
-          </button>
+          <div class="">
+            <button class="col-10 col-sm-7 px-3 py-2 btn fab-button mx-auto text-center" [class.external]="activeCard === 1"
+                    [class.internal]="activeCard === 2" (click)="navigateToDestination()">
+              <span class="pe-1">{{ fabText() }}</span>
+              <img src="icons/telegram.svg" alt="">
+            </button>
+          </div>
         </div>
       }
     </div>

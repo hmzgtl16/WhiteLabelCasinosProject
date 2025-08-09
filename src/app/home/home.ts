@@ -103,9 +103,9 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   fabText() {
     if (this.activeCard === 1) {
-      return 'Join Telegram Group';
+      return 'Join telegram group';
     } else if (this.activeCard === 2) {
-      return 'Discover our Community';
+      return 'Discover our community';
     }
     return '';
   }

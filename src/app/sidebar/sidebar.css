@@ -5,23 +5,28 @@
   backdrop-filter: blur(5px) brightness(15%) opacity(0%);
 
   padding: 4rem 1.5rem;
+  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.58);
 }
 
 .sidebar-item {
   display: flex;
   align-items: center;
+  justify-content: start;
   color: #fcfcfc;
   text-decoration: none;
   transition: all 0.3s ease;
 
-  font-size: 14px;
-  line-height: 1.25;
+  span {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
 }
 
-.sidebar-item img {
-  width: 16px;
-  height: 16px;
-}
 .sidebar-item:hover {
   color: #fd7914;
 }

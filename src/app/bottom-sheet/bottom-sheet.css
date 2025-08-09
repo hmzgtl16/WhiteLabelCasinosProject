@@ -1,22 +1,36 @@
 .btn-fab {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 30px;
-  border: none;
-  width: 80%;
+  z-index: 1050;
 
-  background-color: #322926; /* Orange accent color */
-  background-blend-mode: normal;
+  border-radius: 32px;
+  border: none;
+
   color: #FD7914;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+
+  height: 44px;
+
+  span {
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
 }
 
-.btn-fab-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, 50px);
+.icon-btn-fab {
+  z-index: 1050;
+
+  border-radius: 32px;
+  border: none;
+
+  transition: all 0.3s ease;
+
+  width: 44px;
+  height: 44px;
+
+  img {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -29,78 +43,39 @@
   }
 }
 
-.off-canvas-bottom {
-  background-color: #212529;
-  background-blend-mode: normal;
-  border-radius: 15px;
-  color: #f8f9fa;
+.off-canvas {
+  border-radius: 32px;
   border: none;
-  height: 90%;
-  opacity: 0.9;
-}
-
-.off-canvas-body {
-  padding: 15px 25px;
-}
-
-.off-canvas-body .nav-link {
-  display: flex;
-  align-items: center;
-  color: #e9ecef;
-  padding: 20px 0;
-  border-bottom: 1px solid #3d4145;
-}
-
-.off-canvas-body .nav-item:last-child .nav-link {
-  border-bottom: none;
-}
-
-.off-canvas-body .nav-link:hover {
-  background-color: transparent;
-  color: white;
-}
-
-.off-canvas-body .nav-link i {
-  color: #ff9800;
-  font-size: 1.2rem;
-  margin-right: 20px;
-}
-
-.nav-text {
-  flex: 1;
-}
-
-.nav-text strong {
-  font-weight: 600;
-}
-
-.nav-text:hover {
-  color: #fd7914;
 }
 
 .off-canvas-footer {
-  padding: 20px 0;
   display: flex;
   justify-content: center;
-  border-top: 1px solid #3d4145;
 }
 
 .off-canvas-footer .btn-close {
-  filter: invert(1) brightness(1.2);
-}
-
-
-.off-canvas-footer {
-  display: flex;
-  justify-content: center;
+  button {
+    filter: invert(1) brightness(1.2);
+  }
 }
 
 .sidebar-item {
   display: flex;
   align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #333;
+  justify-content: start;
+  color: #fcfcfc;
   color: #ccc;
   text-decoration: none;
   transition: all 0.3s ease;
+
+  span {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.bg-blur {
+  background-color: rgba(255, 255, 255, 0.1); /* Orange accent color */
+  background-blend-mode: normal;
+  backdrop-filter: blur(37px) brightness(115%) !important;
 }

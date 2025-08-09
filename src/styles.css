@@ -37,7 +37,7 @@
 
 /* Apply Helvetica globally */
 body {
-  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica', sans-serif;
   background: #121212;
 }
 

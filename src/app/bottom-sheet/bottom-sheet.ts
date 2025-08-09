@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -19,7 +19,10 @@ export class BottomSheet {
   isSheetVisible: boolean = false;
   isButtonVisible: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   showBottomSheet(): void {
     this.isSheetVisible = true;
@@ -48,5 +51,9 @@ export class BottomSheet {
   navigateToAmbassador() {
     this.router.navigate([this.ambassadorLink]);
     this.hideBottomSheet()
+  }
+
+  navigateBack() {
+    this.router.navigate(['..'], { relativeTo: this.route });
   }
 }
