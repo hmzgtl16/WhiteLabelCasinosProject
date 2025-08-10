@@ -67,13 +67,15 @@
     <!-- Floating Action Button for Phone -->
     <div class="d-md-none">
       @if (activeCard) {
-        <div class="row">
-          <div class="">
-            <button class="col-10 col-sm-7 px-3 py-2 btn fab-button mx-auto text-center" [class.external]="activeCard === 1"
-                    [class.internal]="activeCard === 2" (click)="navigateToDestination()">
-              <span class="pe-1">{{ fabText() }}</span>
-              <img src="icons/telegram.svg" alt="">
-            </button>
+        <div class="container fixed-bottom">
+          <div class="row gx-3 justify-content-center mx-2 mb-4 pb-2">
+            <div class="col-11 col-sm-8">
+              <button class="btn fab-button w-100" [class.external]="activeCard === 1"
+                      [class.internal]="activeCard === 2" (click)="navigateToDestination()">
+                <span class="pe-1">{{ fabText() }}</span>
+                <img src="icons/telegram.svg" alt="">
+              </button>
+            </div>
           </div>
         </div>
       }

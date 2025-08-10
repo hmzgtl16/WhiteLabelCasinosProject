@@ -1,19 +1,17 @@
 @if (isButtonVisible) {
   <div class="container fixed-bottom">
-    <div class="row justify-content-center align-items-center mb-4">
-      <div class="col-auto"></div>
-      <div class="d-flex w-auto align-items-center">
+    <div class="row gx-3 justify-content-center mx-4 mb-4 pb-2">
+      <div class="d-flex w-auto">
         <button class="btn icon-btn-fab bg-blur position-relative p-0" type="button" (click)="navigateBack()">
           <img src="icons/chevron-left.svg" alt="">
         </button>
       </div>
-      <div class="d-flex w-50">
+      <div class="d-flex w-75">
         <button class="btn btn-fab bg-blur position-relative w-100" type="button" (click)="showBottomSheet()">
           <span class="pe-2">Our Offers</span>
           <img src="icons/chevron-up.svg" alt="">
         </button>
       </div>
-      <div class="col-auto"></div>
     </div>
   </div>
 }

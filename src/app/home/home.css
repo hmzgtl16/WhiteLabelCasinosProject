@@ -158,24 +158,20 @@
 }
 
 .fab-button {
-  position: fixed;
-  bottom: 20px;
-  left: 50%; /* Center horizontally */
-  align-items: center;
   z-index: 1050;
-  transform: translateX(-50%); /* Adjust for perfect centering */
+
+  border-radius: 22px;
+  border: none;
+
+  color: #fd7914;
+  transition: all 0.3s ease;
 
   /* Pill shape and padding */
   height: 44px;
 
-  border: none;
-  border-radius: 22px;
-
   background-color: rgba(255, 255, 255, 0.1);
   background-blend-mode: normal;
   backdrop-filter: blur(37px) brightness(65%) !important;
-  color: #fd7914;
-  gap: 4px !important;
 
   span {
     font-family: "Helvetica", sans-serif;
@@ -187,12 +183,6 @@
     width: 18px;
     height: 18px;
   }
-}
-
-.fab-button-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, 50px);
 }
 
 @media (max-width: 768px) {
