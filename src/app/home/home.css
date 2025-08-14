@@ -1,8 +1,4 @@
-:host {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+
 
 .layout-wrapper {
   margin: 0;
@@ -15,48 +11,39 @@
 }
 
 .card-container {
-  max-width: 1200px;
-  height: 60%;
-  background: none;
+  max-width: 1000px;
+  height: auto !important;
   border-radius: 22px !important;
 }
 
 .text-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+  position: relative;
   height: 100%;
 }
 
 .text-card-content {
   color: #fd7914;
-  height: auto;
-  position: relative;
+  padding: 6rem 2rem 4rem ;
 
-  padding: 2rem 2rem 2rem 1rem;
-
-  background: #121212;
-  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.58);
+  /*border-bottom: 1px solid #707070;*/
 
   p.title {
-    font-size: 42px;
-    font-weight: bold;
+    font-size: 38px !important;
+    font-weight: 900 !important;
     line-height: 1.2;
-    z-index: 2;
+    margin-bottom: 20px;
   }
 
   p.description {
-    font-size: 18px;
+    font-size: 14px;
     z-index: 2;
+    margin-bottom: 0;
   }
 }
 
 .text-card-icons {
   position: relative;
-  z-index: 2;
+  padding: 2rem;
 
   a {
     display: inline-block;
@@ -77,16 +64,23 @@
 
 .image-card {
   position: relative;
-  overflow: hidden;
   border: none;
-  border-radius: 0;
-  width: 100%;
-  height: 100%;
+  max-width: 400px;
+
+  background: #121212 !important;
+
+  img {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
 }
 
-.image-card img {
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+.image-card-border {
+  border-bottom: 1px solid #707070;
 }
 
 .overlay {
@@ -95,66 +89,27 @@
   left: 0;
   right: 0;
   bottom: 0;
-  backdrop-filter: blur(10px) brightness(0.4);
-  background: linear-gradient(45deg, rgba(253, 121, 20, 0.3), rgba(0, 0, 0, 0.3));
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fcfcfc;
   text-align: center;
   z-index: 1;
-}
-
-.image-card:hover .overlay {
-  opacity: 1;
-}
-
-.image-card:hover img {
-  transform: scale(1.05);
+  width: auto;
+  height: auto;
 }
 
 .overlay-smoky {
-  backdrop-filter: blur(15px) brightness(0.3) contrast(1.2);
-  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(15px) brightness(65%);
+  background: rgba(17, 17, 17, 0.6);
 }
 
-.img-action-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fd7914;
-  padding: 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  z-index: 2;
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  animation: pulse 2s infinite;
-  background-color: #999999;
-  opacity: 0.6;
-
-  &:hover {
-    background: #fd7914;
-    color: #000;
-    transform: translateX(-50%) translateY(-5px);
-    box-shadow: 0 5px 15px rgba(253, 121, 20, 0.4);
-    animation: none;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(253, 121, 20, 0.3);
-  }
+.overlay-text {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .fab-button {
@@ -186,12 +141,13 @@
 }
 
 @media (max-width: 768px) {
-  .layout-wrapper {
-    padding: 0.5rem;
+  .card-container {
+    margin: 4rem 0.5rem 0;
   }
 
-  .card-text-content {
-    padding: 1.5rem;
+  .text-card-content {
+
+    padding: 6rem 2rem 0;
 
     p.title {
       font-size: 34px;
@@ -200,12 +156,6 @@
     p.description {
       font-size: 14px;
     }
-  }
-
-  .img-action-btn {
-    display: flex !important;
-    font-size: 0.9rem;
-    padding: 10px 20px;
   }
 
   .overlay {
@@ -219,35 +169,24 @@
   .text-card {
     position: relative;
   }
+
+  .image-card-border-bottom {
+    border-bottom: 1px solid #707070;
+  }
+
+  .image-card-border-top-radius {
+    border-top-left-radius: 22px !important;
+    border-top-right-radius: 22px !important;
+  }
+
+  .image-card-border-bottom-radius {
+    border-bottom-left-radius: 22px !important;
+    border-bottom-right-radius: 22px !important;
+  }
 }
 
 @media (min-width: 768px) {
   .fab-button {
     display: none !important;
-  }
-
-  .img-action-btn {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px);
-  }
-}
-
-@media (max-width: 768px) {
-  .text-card-content {
-    p.title {
-      font-size: 34px;
-    }
-
-    p.description {
-      font-size: 14px;
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-  .text-card-content {
-    p.title {
-      font-size: 34px;
-    }
   }
 }

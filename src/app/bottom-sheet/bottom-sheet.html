@@ -1,15 +1,15 @@
 @if (isButtonVisible) {
   <div class="container fixed-bottom">
-    <div class="row gx-3 justify-content-center mx-4 mb-4 pb-2">
-      <div class="d-flex w-auto">
+    <div class="row gx-2 justify-content-center mx-4 mb-4 pb-4">
+      <div class="d-flex w-auto me-1">
         <button class="btn icon-btn-fab bg-blur position-relative p-0" type="button" (click)="navigateBack()">
-          <img src="icons/chevron-left.svg" alt="">
+          <img ngSrc="icons/chevron-left.svg" alt="" height=36 width=36>
         </button>
       </div>
       <div class="d-flex w-75">
         <button class="btn btn-fab bg-blur position-relative w-100" type="button" (click)="showBottomSheet()">
           <span class="pe-2">Our Offers</span>
-          <img src="icons/chevron-up.svg" alt="">
+          <img ngSrc="icons/chevron-up.svg" alt="" height=20 width=20>
         </button>
       </div>
     </div>
@@ -17,41 +17,52 @@
 }
 
 @if (isSheetVisible) {
-  <div class="container fixed-top h-100 pb-5">
-    <div class="col-sm-9 off-canvas bg-blur mx-sm-auto mx-3 my-4 h-100">
-      <div class="off-canvas-body mx-auto px-3 py-5">
-        <div class="my-4">
-          <a (click)="navigateToOffers()" class="sidebar-item py-4">
-            <img src="icons/chevron-right.svg" alt="">
-            <span class="ps-2">Daily updates on the best exclusive bonus offers</span>
-          </a>
+  <div class="container fixed-top px-0 h-100">
+    <div class="col-auto off-canvas bg-blur mx-sm-auto h-100">
+      <div class="d-flex flex-column h-100">
+        <div class="off-canvas-body mx-auto h-100 overflow-auto">
+          <div class="my-4">
+            <a (click)="navigateToHome()" class="sidebar-item">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>Home</span>
+            </a>
 
-          <a (click)="navigateToCasino()" class="sidebar-item 4">
-            <img src="icons/chevron-right.svg" alt="">
-            <span class="ps-2">Private one-on-one calls with casino insider</span>
-          </a>
+            <a (click)="navigateToOffers()" class="sidebar-item">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>Daily updates on the best exclusive bonus offers</span>
+            </a>
 
-          <a (click)="navigateToCrypto()" class="sidebar-item py-4">
-            <img src="icons/chevron-right.svg" alt="">
-            <span class="ps-2">Get Access to Crypto Projects</span>
-          </a>
+            <a (click)="navigateToCasino()" class="sidebar-item">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>Private one-on-one calls with casino insider</span>
+            </a>
 
-          <a (click)="navigateToGiveaways()" class="sidebar-item py-4">
-            <img src="icons/chevron-right.svg" alt="">
-            <span class="ps-2">VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
-          </a>
+            <a (click)="navigateToCrypto()" class="sidebar-item">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>Get Access to Crypto Projects</span>
+            </a>
 
-          <a (click)="navigateToAmbassador()" class="sidebar-item py-4 border-bottom-0">
-            <img src="icons/chevron-right.svg" alt="">
-            <span class="ps-2">An optional ambassador program with rewards for active members</span>
-          </a>
+            <a (click)="navigateToGiveaways()" class="sidebar-item">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
+            </a>
+
+            <a (click)="navigateToAmbassador()" class="sidebar-item">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>An optional ambassador program with rewards for active members</span>
+            </a>
+
+            <a (click)="navigateToTelegram()" class="sidebar-item border-bottom-0">
+              <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+              <span>Join telegram group</span>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="off-canvas-footer position-fixed bottom-0 end-0 py-3 w-100">
-        <button class="btn mx-auto border-0" type="button" (click)="hideBottomSheet()">
-          <img src="icons/chevron-down.svg" alt="">
-        </button>
+        <div class="off-canvas-footer flex-shrink-1">
+          <button class="btn mx-auto" type="button" (click)="hideBottomSheet()">
+            <img ngSrc="icons/chevron-down.svg" alt="" height=40 width=40>
+          </button>
+        </div>
       </div>
     </div>
   </div>

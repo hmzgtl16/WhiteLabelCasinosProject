@@ -6,14 +6,14 @@
 .hero-title {
   font-size: 42px;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
   color: #fcfcfc;
 }
 
 .hero-description {
   font-size: 14px;
   line-height: 1.6;
-  color: #ccc;
+  color: #fcfcfc;
   margin-bottom: 0.5rem;
 }
 
@@ -21,7 +21,7 @@
   color: #fd7914;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .hero-title {
     font-size: 34px;
   }

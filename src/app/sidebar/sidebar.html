@@ -1,43 +1,96 @@
-<div class="sidebar min-vh-100">
+<div class="sidebar h-100">
   <div class="sidebar-content px-1 py-2">
     <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb" style="--bs-breadcrumb-divider-color: #fd7914">
-        <li class="breadcrumb-item">
-          <a (click)="navigateToHome()" class="link-underline link-underline-opacity-0" style="color: #fcfcfc">Home</a>
+    <nav>
+      <ol class="breadcrumb" style="margin-bottom: 40px;">
+        <li class="custom-breadcrumb-item">
+          <a (click)="navigateToHome()" class="link-underline link-underline-opacity-0">Home</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          <a (click)="navigateToCommunity()" class="link-underline link-underline-opacity-0" style="color: #fd7914">Community</a>
-        </li>
+        @if (isCommunityPath) {
+          <li class="custom-breadcrumb-separator-active">
+            /
+          </li>
+          <li class="custom-breadcrumb-item-active">
+            <a class="link-underline link-underline-opacity-0">Community</a>
+          </li>
+        } @else {
+          <li class="custom-breadcrumb-separator">
+            /
+          </li>
+          <li class="custom-breadcrumb-item">
+            <a (click)="navigateToCommunity()" class="link-underline link-underline-opacity-0">Community</a>
+          </li>
+          <li class="custom-breadcrumb-separator-active">
+            /
+          </li>
+          <li class="custom-breadcrumb-item-active">
+            <a class="link-underline link-underline-opacity-0">{{ getCurrentRouteText() }}</a>
+          </li>
+        }
       </ol>
     </nav>
 
     <!-- Navigation Items -->
     <div class="sidebar-nav">
-      <a (click)="navigateToOffers()" class="sidebar-item py-3 ">
-        <img src="icons/chevron-right.svg" alt="">
-        <span class="px-2">Daily updates on the best exclusive bonus offers</span>
-      </a>
+      @if (isOffersPath) {
+        <a (click)="navigateToOffers()" class="sidebar-item-active">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>Daily updates on the best exclusive bonus offers</span>
+        </a>
+      } @else {
+        <a (click)="navigateToOffers()" class="sidebar-item">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>Daily updates on the best exclusive bonus offers</span>
+        </a>
+      }
 
-      <a (click)="navigateToCasino()" class="sidebar-item py-3">
-        <img src="icons/chevron-right.svg" alt="">
-        <span class="px-2">Private one-on-one calls with casino insider</span>
-      </a>
+      @if (isCasinoPath) {
+        <a (click)="navigateToCasino()" class="sidebar-item-active">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>Private one-on-one calls with casino insider</span>
+        </a>
+      } @else {
+        <a (click)="navigateToCasino()" class="sidebar-item">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>Private one-on-one calls with casino insider</span>
+        </a>
+      }
 
-      <a (click)="navigateToCrypto()" class="sidebar-item py-3">
-        <img src="icons/chevron-right.svg" alt="">
-        <span class="px-2">Get Access to Crypto Projects</span>
-      </a>
+      @if (isCryptoPath) {
+        <a (click)="navigateToCrypto()" class="sidebar-item-active">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>Get Access to Crypto Projects</span>
+        </a>
+      } @else {
+        <a (click)="navigateToCrypto()" class="sidebar-item">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>Get Access to Crypto Projects</span>
+        </a>
+      }
 
-      <a (click)="navigateToGiveaways()" class="sidebar-item py-3">
-        <img src="icons/chevron-right.svg" alt="">
-        <span class="px-2">VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
-      </a>
+      @if (isGiveawaysPath) {
+        <a (click)="navigateToGiveaways()" class="sidebar-item-active">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
+        </a>
+      } @else {
+        <a (click)="navigateToGiveaways()" class="sidebar-item">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
+        </a>
+      }
 
-      <a (click)="navigateToAmbassador()" class="sidebar-item py-3">
-        <img src="icons/chevron-right.svg" alt="">
-        <span class="px-2">An optional ambassador program with rewards for active members</span>
-      </a>
+      @if (isAmbassadorPath) {
+        <a (click)="navigateToAmbassador()" class="sidebar-item-active">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>An optional ambassador program with rewards for active members</span>
+        </a>
+      } @else {
+        <a (click)="navigateToAmbassador()" class="sidebar-item">
+          <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
+          <span>An optional ambassador program with rewards for active members</span>
+        </a>
+      }
     </div>
   </div>
 </div>

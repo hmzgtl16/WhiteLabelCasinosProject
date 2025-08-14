@@ -1,27 +1,30 @@
-<div class="col-12 col-sm-11 col-md-12 overflow-hidden">
+<div class="col-auto h-100 overflow-y-auto scroll-bar-hide">
   <div class="m-4 px-sm-5 py-5">
     <!-- Hero Section -->
     <div>
-      <h1 class="hero-title text-uppercase">TO THE NEXT BIG THING</h1>
-      <p class="hero-description">Welcome our private casino hub</p>
+      <div class="d-flex flex-row"style="gap: 10px; margin-bottom: 30px;">
+        <h1 class="hero-title text-uppercase w-100">TO THE NEXT BIG THING</h1>
+        <img class="flex-shrink-1" ngSrc="icons/chevron-left.svg" alt="" height=50 width=72>
+      </div>
       <p class="hero-description">
+        Welcome our private casino hub<br>
         Join us to access exclusive bonus offers, early crypto and NFT projects — all in one trusted place.
-        <span class="highlight-text">White label casinos</span>
+        <span>White label casinos</span>
       </p>
     </div>
 
     <!-- Our Offers Section -->
-    <div class="offers-section">
-      <h2 class="section-title">Our Offers</h2>
+    <div>
+      <p class="section-title">Our Offers</p>
 
       <div class="row g-4 py-2">
         <!-- Crypto Projects Card -->
-        <div class="col-12 col-sm-6 col-xxl-5">
-          <div class="offer-card">
+        <div class="col-auto px-1">
+          <div (click)="navigateToCrypto()" class="offer-card">
             <div class="offer-image">
-              <img src="images/card-1.jpeg" class="img-fluid" alt="">
+              <img src="images/card-1.jpg" class="img-fluid">
             </div>
-            <div class="offer-content px-4">
+            <div class="offer-content pe-4 px-sm-4">
               <p class="offer-title">Get Access to Crypto Projects</p>
               <p class="offer-description pe-5">
                 Step into the room before the launch happens. As part of our private network, you'll get direct access
@@ -32,12 +35,12 @@
         </div>
 
         <!-- Daily Bonus Card -->
-        <div class="col-12 col-sm-6 col-xxl-5">
-          <div class="offer-card">
+        <div class="col-auto px-1">
+          <div (click)="navigateToOffers()" class="offer-card">
             <div class="offer-image">
-              <img src="images/card-2.png" class="img-fluid" alt="">
+              <img src="images/card-2.jpg" class="img-fluid">
             </div>
-            <div class="offer-content px-4">
+            <div class="offer-content pe-4 px-sm-4">
               <p class="offer-title">Daily Bonus offers</p>
               <p class="offer-description pe-5">
                 Step into the room before the launch happens. As part of our private network, you'll get direct access
@@ -50,13 +53,13 @@
 
       <div class="row g-4 py-2">
         <!-- VIP Giveaways Card -->
-        <div class="col-12 col-sm-6 col-xxl-5">
-          <div class="offer-card">
+        <div class="col-auto px-1">
+          <div (click)="navigateToGiveaways()" class="offer-card">
             <div class="offer-image">
               <img src="images/card-3.jpg" class="img-fluid" alt="">
             </div>
-            <div class="offer-content px-4">
-              <h3 class="offer-title">Giveaways</h3>
+            <div class="offer-content pe-4 px-sm-4">
+              <p class="offer-title">Giveaways</p>
               <p class="offer-description pe-5">
                 Step into the room before the lunch happens. As part of our private Network, you will get direct
                 access to the key investors
@@ -66,13 +69,13 @@
         </div>
 
         <!-- Ambassador Program Card -->
-        <div class="col-12 col-sm-6 col-xxl-5">
-          <div class="offer-card">
+        <div class="col-auto px-1">
+          <div (click)="navigateToCasino()" class="offer-card">
             <div class="offer-image">
               <img src="images/card-4.jpg" class="img-fluid" alt="">
             </div>
-            <div class="offer-content px-4">
-              <h3 class="offer-title">121 Meetings</h3>
+            <div class="offer-content pe-4 px-sm-4">
+              <p class="offer-title">121 Meetings</p>
               <p class="offer-description pe-5">
                 Step into the room before the lunch happens. As part of our private Network, you will get direct
                 access to the key investors

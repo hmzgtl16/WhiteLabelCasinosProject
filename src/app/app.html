@@ -1,15 +1,15 @@
 @if (showSidebar) {
-  <div class="row vh-100 g-0">
+  <div class="d-flex flex-row h-100">
 
     <!-- Sidebar -->
-    <div class="col-md-3 position-fixed">
+    <div class="position-sticky top-0 start-0 flex-shrink-1 h-auto">
       <div class="d-md-block d-none h-100">
         <app-sidebar/>
       </div>
     </div>
 
     <!-- Main Content -->
-    <div class="col-md-9 ms-md-auto">
+    <div class="w-100 vh-100 overflow-hidden">
       <router-outlet/>
     </div>
   </div>

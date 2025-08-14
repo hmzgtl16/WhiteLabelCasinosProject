@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Location, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-bottom-sheet',
   imports: [
+    NgOptimizedImage
 
   ],
   templateUrl: './bottom-sheet.html',
@@ -11,17 +13,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class BottomSheet {
 
-  offersLink = '/offers';
-  casinoLink = '/casino';
-  cryptoLink = '/crypto';
-  giveawaysLink = '/giveaways';
-  ambassadorLink = '/ambassador';
   isSheetVisible: boolean = false;
   isButtonVisible: boolean = true;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   showBottomSheet(): void {
@@ -32,28 +30,33 @@ export class BottomSheet {
     this.isSheetVisible = false;
     this.isButtonVisible = true;
   }
+  navigateToHome() {
+    this.router.navigate(['..'], { relativeTo: this.route }).then();
+  }
   navigateToOffers() {
-    this.router.navigate([this.offersLink]);
+    this.router.navigate(['/offers']).then();
     this.hideBottomSheet()
   }
   navigateToCasino() {
-    this.router.navigate([this.casinoLink]);
+    this.router.navigate(['/casino']).then();
     this.hideBottomSheet()
   }
   navigateToCrypto() {
-    this.router.navigate([this.cryptoLink]);
+    this.router.navigate(['/crypto']).then();
     this.hideBottomSheet()
   }
   navigateToGiveaways() {
-    this.router.navigate([this.giveawaysLink]);
+    this.router.navigate(['/giveaways']).then();
     this.hideBottomSheet()
   }
   navigateToAmbassador() {
-    this.router.navigate([this.ambassadorLink]);
+    this.router.navigate(['/ambassador']).then();
     this.hideBottomSheet()
   }
-
+  navigateToTelegram(): void {
+    window.open('https://t.me/your_group_link', '_blank');
+  }
   navigateBack() {
-    this.router.navigate(['..'], { relativeTo: this.route });
+    this.location.back();
   }
 }

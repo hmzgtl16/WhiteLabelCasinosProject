@@ -1,6 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {NgClass} from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-offers',

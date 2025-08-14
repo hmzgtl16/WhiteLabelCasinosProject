@@ -1,11 +1,11 @@
-import {Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit, OnDestroy} from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
+import {Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy} from '@angular/core';
+import {Router} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-home',
   imports: [
-    RouterLink
+    NgOptimizedImage
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
@@ -116,10 +116,7 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any): void {
-    this.checkIfMobile();
-  }
+
 
   private checkIfMobile(): void {
     this.isMobile = window.innerWidth <= 768;
@@ -145,6 +142,6 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   }
 
   joinCommunity(): void {
-    this.router.navigate([this.communityLink]);
+    this.router.navigateByUrl(this.communityLink).then();
   }
 }
