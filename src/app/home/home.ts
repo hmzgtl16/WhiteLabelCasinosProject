@@ -1,41 +1,66 @@
-import {Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy} from '@angular/core';
-import {Router} from '@angular/router';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  signal,
+  ViewChild
+} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
+import {filter} from 'rxjs';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home implements OnInit, AfterViewInit, OnDestroy {
 
+  private translate = inject(TranslateService);
+
   @ViewChild('telegram') card1!: ElementRef;
   @ViewChild('casino') card2!: ElementRef;
+  @ViewChild('mainRow') mainRow!: ElementRef;
+  @ViewChild('rowContainer') rowContainer!: ElementRef;
 
   activeCard: number | null = null;
   private observer!: IntersectionObserver;
   private cardVisibility = [0, 0];
 
-// Configuration properties
-  socialLinks = {
-    instagram: 'https://www.instagram.com/white_label_casinos',
-    facebook: 'https://facebook.com/Whitelabelcasinos',
-    email: 'mailto:your@email.com'
-  };
+  private languages = [
+    {id: 'en', name: 'EN'},
+    {id: 'fr', name: 'FR'},
+    {id: 'es', name: 'ES'},
+    {id: 'de', name: 'DE'}
+  ];
 
-  telegramGroupLink = 'https://t.me/your_group_link';
+  selectedLanguage = signal(this.languages[0].id);
+
+// Configuration properties
+  telegramGroupLink = 'https://t.me/WhiteLabelCasinosBot';
   communityLink = '/community';
 
   isMobile = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+  ) {
+    this.initializeLanguage();
   }
 
   ngAfterViewInit() {
     this.setupObserver();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {});
   }
 
   ngOnInit(): void {
@@ -93,55 +118,41 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  navigateToDestination() {
-    if (this.activeCard === 1) {
-      this.joinTelegram();
-    } else if (this.activeCard === 2) {
-      this.joinCommunity();
-    }
-  }
-
-  fabText() {
-    if (this.activeCard === 1) {
-      return 'Join telegram group';
-    } else if (this.activeCard === 2) {
-      return 'Discover our community';
-    }
-    return '';
-  }
-
   ngOnDestroy() {
     if (this.observer) {
       this.observer.disconnect();
     }
   }
 
-
-
   private checkIfMobile(): void {
     this.isMobile = window.innerWidth <= 768;
   }
 
-  // Image error handling
-// Social media handlers
-  openInstagram(): void {
-    window.open(this.socialLinks.instagram, '_blank');
-  }
-
-  openFacebook(): void {
-    window.open(this.socialLinks.facebook, '_blank');
-  }
-
-  openEmail(): void {
-    window.location.href = this.socialLinks.email;
-  }
-
-  // Action handlers
   joinTelegram(): void {
     window.open(this.telegramGroupLink, '_blank');
   }
 
   joinCommunity(): void {
     this.router.navigateByUrl(this.communityLink).then();
+  }
+
+  selectLanguage(lang: string) {
+    this.translate.use(lang)
+    localStorage.setItem('selectedLanguage', lang);
+  }
+
+  getLanguages() {
+    return this.languages.filter(language => language.id !== this.getSelectedLanguage().id);
+  }
+
+  getSelectedLanguage() {
+    const savedLang = localStorage.getItem('selectedLanguage');
+    return this.languages.find(lang => lang.id === savedLang) || this.languages[0];
+  }
+
+  private initializeLanguage() {
+    // Get saved language or use browser language
+    const selectedLanguage = this.getSelectedLanguage()
+    this.selectLanguage(selectedLanguage.id);
   }
 }

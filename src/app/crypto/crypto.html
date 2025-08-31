@@ -1,22 +1,106 @@
-<div class="col-11 col-md-9 overflow-hidden">
+<div class="col-auto h-100  overflow-y-auto scroll-bar-hide">
   <div class="m-4 px-md-5 py-5">
     <!-- Hero Section -->
     <div>
-      <h1 class="hero-title">Crypto Projects</h1>
-      <p class="hero-description">
-        In order to provide the best possible experience to old and buggy browsers, Bootstrap uses CSS browser hacks
-        in several places to target special CSS to certain browser versions in order to work around bugs in the
-        browsers themselves. These hacks understandably cause CSS validators to complain that they are invalid.
-        In a couple places, we also use bleeding-edge CSS features that aren’t yet fully standardized, but these are
-        used purely for progressive enhancement.
-
-        These validation warnings don’t matter in practice since the non-hacky portion of our CSS does fully validate
-        and the hacky portions don’t interfere with the proper functioning of the non-hacky portion, hence why we
-        deliberately ignore these particular warnings.
-
-        Our HTML docs likewise have some trivial and inconsequential HTML validation warnings due to our inclusion
-        of a workaround for a certain Firefox bug.
-      </p>
+      <div class="d-flex flex-row" style="margin-bottom: 30px">
+        <h1 class="hero-title w-100">
+          {{ 'crypto-hero-title' | translate }}
+        </h1>
+        <div (click)="navigateBack()" class="d-none d-md-block hero-icon flex-shrink-1">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               height="24px"
+               viewBox="0 -960 960 960"
+               width="24px" fill="currentColor">
+            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p1' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p2' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p3' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p4' | translate }}
+        </p>
+        <p class="hero-description fw-bold">
+          {{ 'crypto-hero-description-p5' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p6' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p7' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p8' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p9' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p10' | translate }}
+        </p>
+        <p class="hero-description fw-bold">
+          {{ 'crypto-hero-description-p11' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p12' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p13' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p14' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p15' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p16' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p17' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p18' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p19' | translate }}
+        </p>
+        <p class="hero-description fw-bold">
+          {{ 'crypto-hero-description-p20' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p21' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p22' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p23' | translate }}
+        </p>
+        <p class="hero-description fw-bold">
+          {{ 'crypto-hero-description-p24' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p25' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p26' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p27' | translate }}
+        </p>
+        <p class="hero-description">
+          {{ 'crypto-hero-description-p28' | translate }}
+        </p>
+      </div>
     </div>
   </div>
 </div>

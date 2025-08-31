@@ -1,26 +1,38 @@
-import { Component } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {Location, NgOptimizedImage} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {NgOptimizedImage} from '@angular/common';
+import {filter} from 'rxjs';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bottom-sheet',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
 
   ],
   templateUrl: './bottom-sheet.html',
   styleUrl: './bottom-sheet.css'
 })
-export class BottomSheet {
+export class BottomSheet implements OnInit {
 
   isSheetVisible: boolean = false;
   isButtonVisible: boolean = true;
+  isCommunityPath: boolean = true;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
   ) {}
+
+  ngOnInit() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        let currentPath = event.urlAfterRedirects;
+        this.isCommunityPath = currentPath.includes('/community');
+      });
+  }
 
   showBottomSheet(): void {
     this.isSheetVisible = true;
@@ -54,9 +66,14 @@ export class BottomSheet {
     this.hideBottomSheet()
   }
   navigateToTelegram(): void {
-    window.open('https://t.me/your_group_link', '_blank');
+    window.open('https://t.me/WhiteLabelCasinosBot', '_blank');
   }
   navigateBack() {
-    this.location.back();
+    if (this.isCommunityPath) {
+      this.router.navigate(['..']).then();
+    } else {
+      this.router.navigate(['/community'], { relativeTo: this.route }).then();
+    }
+    this.hideBottomSheet()
   }
 }

@@ -8,8 +8,7 @@ import { Casino } from './casino/casino';
 import { Ambassador } from './ambassador/ambassador';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: Home },
+  { path: '', component: Home },
   { path: 'community', component: Community },
   { path: 'crypto', component: Crypto },
   { path: 'giveaways', component: Giveaways },

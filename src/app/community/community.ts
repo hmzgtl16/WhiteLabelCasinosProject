@@ -1,18 +1,31 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Router} from '@angular/router';
-import {NgOptimizedImage} from '@angular/common';
+import {DomSanitizer} from '@angular/platform-browser';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-community',
   imports: [
-    NgOptimizedImage
+    TranslatePipe
   ],
   templateUrl: './community.html',
   styleUrl: './community.css'
 })
 export class Community {
 
-  constructor(private router: Router) {
+  private translate = inject(TranslateService);
+
+  communityHeroDescription = ''
+
+  constructor(
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {
+    this.translate
+      .get('community-hero-description')
+      .subscribe((res: string) => {
+        this.communityHeroDescription = res;
+      });
   }
 
   navigateToOffers() {
@@ -31,7 +44,7 @@ export class Community {
     this.router.navigate(['/giveaways']).then();
   }
 
-  navigateToAmbassador() {
-    this.router.navigate(['/ambassador']).then();
+  navigateBack() {
+    this.router.navigate(['..']).then();
   }
 }

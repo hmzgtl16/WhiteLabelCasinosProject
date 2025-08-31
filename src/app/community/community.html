@@ -2,83 +2,99 @@
   <div class="m-4 px-sm-5 py-5">
     <!-- Hero Section -->
     <div>
-      <div class="d-flex flex-row"style="gap: 10px; margin-bottom: 30px;">
-        <h1 class="hero-title text-uppercase w-100">TO THE NEXT BIG THING</h1>
-        <img class="flex-shrink-1" ngSrc="icons/chevron-left.svg" alt="" height=50 width=72>
+      <div class="d-flex flex-row" style="margin-bottom: 30px">
+        <h1 class="hero-title text-uppercase w-100">
+          {{ 'community-hero-title' | translate }}
+        </h1>
+        <div (click)="navigateBack()" class="d-none d-md-block hero-icon flex-shrink-1">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               height="24px"
+               viewBox="0 -960 960 960"
+               width="24px" fill="currentColor">
+            <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+          </svg>
+        </div>
       </div>
       <p class="hero-description">
-        Welcome our private casino hub<br>
-        Join us to access exclusive bonus offers, early crypto and NFT projects — all in one trusted place.
-        <span>White label casinos</span>
+        {{'community-hero-description' | translate }}
+        <a class="link-offset-2 link-underline link-underline-opacity-0" href="https://whitelabelcasinos.com/" style="color: #fd7914;" target="_blank">
+          {{'community-hero-description-link' | translate }}
+        </a>
       </p>
     </div>
 
     <!-- Our Offers Section -->
     <div>
-      <p class="section-title">Our Offers</p>
+      <p class="section-title">
+        {{ 'community-offers-title' | translate }}
+      </p>
 
-      <div class="row g-4 py-2">
+      <div class="row gx-4" style="max-width: 900px;">
         <!-- Crypto Projects Card -->
-        <div class="col-auto px-1">
+        <div class="col-auto col-xl-6 ps-lg-1 pe-lg-3">
           <div (click)="navigateToCrypto()" class="offer-card">
             <div class="offer-image">
-              <img src="images/card-1.jpg" class="img-fluid">
+              <img src="images/crypto.jpg" class="img-fluid">
             </div>
             <div class="offer-content pe-4 px-sm-4">
-              <p class="offer-title">Get Access to Crypto Projects</p>
+              <p class="offer-title">
+                {{ 'community-offers-card1-title' | translate }}
+              </p>
               <p class="offer-description pe-5">
-                Step into the room before the launch happens. As part of our private network, you'll get direct access
-                to the key investors
+                {{ 'community-offers-card1-description' | translate }}
               </p>
             </div>
           </div>
         </div>
 
         <!-- Daily Bonus Card -->
-        <div class="col-auto px-1">
+        <div class="col-auto col-xl-6 ps-lg-3 pe-lg-1">
           <div (click)="navigateToOffers()" class="offer-card">
             <div class="offer-image">
-              <img src="images/card-2.jpg" class="img-fluid">
+              <img src="images/offers.jpg" class="img-fluid">
             </div>
             <div class="offer-content pe-4 px-sm-4">
-              <p class="offer-title">Daily Bonus offers</p>
+              <p class="offer-title">
+                {{ 'community-offers-card2-title' | translate }}
+              </p>
               <p class="offer-description pe-5">
-                Step into the room before the launch happens. As part of our private network, you'll get direct access
-                to the key investors
+                {{ 'community-offers-card2-description' | translate }}
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row g-4 py-2">
+      <div class="row gx-4" style="max-width: 900px;">
         <!-- VIP Giveaways Card -->
-        <div class="col-auto px-1">
+        <div class="col-auto col-xl-6 ps-lg-1 pe-lg-3">
           <div (click)="navigateToGiveaways()" class="offer-card">
             <div class="offer-image">
-              <img src="images/card-3.jpg" class="img-fluid" alt="">
+              <img src="images/giveaways.jpg" class="img-fluid" alt="">
             </div>
             <div class="offer-content pe-4 px-sm-4">
-              <p class="offer-title">Giveaways</p>
+              <p class="offer-title">
+                {{ 'community-offers-card3-title' | translate }}
+              </p>
               <p class="offer-description pe-5">
-                Step into the room before the lunch happens. As part of our private Network, you will get direct
-                access to the key investors
+                {{ 'community-offers-card3-description' | translate }}
               </p>
             </div>
           </div>
         </div>
 
         <!-- Ambassador Program Card -->
-        <div class="col-auto px-1">
+        <div class="col-auto col-xl-6 ps-lg-3 pe-lg-1">
           <div (click)="navigateToCasino()" class="offer-card">
             <div class="offer-image">
-              <img src="images/card-4.jpg" class="img-fluid" alt="">
+              <img src="images/vip.jpg" class="img-fluid" alt="">
             </div>
             <div class="offer-content pe-4 px-sm-4">
-              <p class="offer-title">121 Meetings</p>
+              <p class="offer-title">
+                {{ 'community-offers-card4-title' | translate }}
+              </p>
               <p class="offer-description pe-5">
-                Step into the room before the lunch happens. As part of our private Network, you will get direct
-                access to the key investors
+                {{ 'community-offers-card4-description' | translate }}
               </p>
             </div>
           </div>
@@ -87,4 +103,3 @@
     </div>
   </div>
 </div>
-

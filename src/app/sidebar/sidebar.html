@@ -4,28 +4,66 @@
     <nav>
       <ol class="breadcrumb" style="margin-bottom: 40px;">
         <li class="custom-breadcrumb-item">
-          <a (click)="navigateToHome()" class="link-underline link-underline-opacity-0">Home</a>
+          <a (click)="navigateToHome()" class="link-underline link-underline-opacity-0">
+            {{ 'sidebar-breadcrumb-home' | translate }}
+          </a>
         </li>
         @if (isCommunityPath) {
           <li class="custom-breadcrumb-separator-active">
             /
           </li>
           <li class="custom-breadcrumb-item-active">
-            <a class="link-underline link-underline-opacity-0">Community</a>
+            <a class="link-underline link-underline-opacity-0">
+              {{ 'sidebar-breadcrumb-community' | translate }}
+            </a>
           </li>
         } @else {
           <li class="custom-breadcrumb-separator">
             /
           </li>
           <li class="custom-breadcrumb-item">
-            <a (click)="navigateToCommunity()" class="link-underline link-underline-opacity-0">Community</a>
+            <a (click)="navigateToCommunity()" class="link-underline link-underline-opacity-0">
+              {{ 'sidebar-breadcrumb-community' | translate }}
+            </a>
           </li>
           <li class="custom-breadcrumb-separator-active">
             /
           </li>
-          <li class="custom-breadcrumb-item-active">
-            <a class="link-underline link-underline-opacity-0">{{ getCurrentRouteText() }}</a>
-          </li>
+          @if (isAmbassadorPath) {
+            <li class="custom-breadcrumb-item-active">
+              <a class="link-underline link-underline-opacity-0">
+                {{ 'sidebar-breadcrumb-ambassador' | translate }}
+              </a>
+            </li>
+          }
+          @if (isCasinoPath) {
+            <li class="custom-breadcrumb-item-active">
+              <a class="link-underline link-underline-opacity-0">
+                {{ 'sidebar-breadcrumb-casino' | translate }}
+              </a>
+            </li>
+          }
+          @if (isCryptoPath) {
+            <li class="custom-breadcrumb-item-active">
+              <a class="link-underline link-underline-opacity-0">
+                {{ 'sidebar-breadcrumb-crypto' | translate }}
+              </a>
+            </li>
+          }
+          @if (isGiveawaysPath) {
+            <li class="custom-breadcrumb-item-active">
+              <a class="link-underline link-underline-opacity-0">
+                {{ 'sidebar-breadcrumb-giveaways' | translate }}
+              </a>
+            </li>
+          }
+          @if (isOffersPath) {
+            <li class="custom-breadcrumb-item-active">
+              <a class="link-underline link-underline-opacity-0">
+                {{ 'sidebar-breadcrumb-offers' | translate }}
+              </a>
+            </li>
+          }
         }
       </ol>
     </nav>
@@ -35,62 +73,73 @@
       @if (isOffersPath) {
         <a (click)="navigateToOffers()" class="sidebar-item-active">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>Daily updates on the best exclusive bonus offers</span>
+          <span>
+            {{ 'sidebar-link-1' | translate }}</span>
         </a>
       } @else {
         <a (click)="navigateToOffers()" class="sidebar-item">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>Daily updates on the best exclusive bonus offers</span>
+          <span>
+            {{ 'sidebar-link-1' | translate }}</span>
         </a>
       }
 
       @if (isCasinoPath) {
         <a (click)="navigateToCasino()" class="sidebar-item-active">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>Private one-on-one calls with casino insider</span>
+          <span>
+            {{ 'sidebar-link-2' | translate }}</span>
         </a>
       } @else {
         <a (click)="navigateToCasino()" class="sidebar-item">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>Private one-on-one calls with casino insider</span>
+          <span>
+            {{ 'sidebar-link-2' | translate }}</span>
         </a>
       }
 
       @if (isCryptoPath) {
         <a (click)="navigateToCrypto()" class="sidebar-item-active">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>Get Access to Crypto Projects</span>
+          <span>
+            {{ 'sidebar-link-3' | translate }}</span>
         </a>
       } @else {
         <a (click)="navigateToCrypto()" class="sidebar-item">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>Get Access to Crypto Projects</span>
+          <span>
+            {{ 'sidebar-link-3' | translate }}</span>
         </a>
       }
 
       @if (isGiveawaysPath) {
         <a (click)="navigateToGiveaways()" class="sidebar-item-active">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
+          <span>
+            {{ 'sidebar-link-4' | translate }}</span>
         </a>
       } @else {
         <a (click)="navigateToGiveaways()" class="sidebar-item">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>VIP-only giveaways (crypto wallets, gift cards, free spins)</span>
+          <span>
+            {{ 'sidebar-link-4' | translate }}</span>
         </a>
       }
 
       @if (isAmbassadorPath) {
         <a (click)="navigateToAmbassador()" class="sidebar-item-active">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>An optional ambassador program with rewards for active members</span>
+          <span>
+            {{ 'sidebar-link-5' | translate }}</span>
         </a>
       } @else {
         <a (click)="navigateToAmbassador()" class="sidebar-item">
           <img ngSrc="icons/chevron-right.svg" alt="" height=20 width=20>
-          <span>An optional ambassador program with rewards for active members</span>
+          <span>
+            {{ 'sidebar-link-5' | translate }}</span>
         </a>
       }
     </div>
   </div>
 </div>
+

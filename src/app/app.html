@@ -19,9 +19,45 @@
     <app-bottom-sheet/>
   </div>
 } @else {
-  <div class="row vh-100 g-0">
-    <div class="col-12">
+  <div class="container-fluid p-0">
+    <div class="d-flex flex-column"
+    style="background: radial-gradient(farthest-corner at 50% 100%, #ffffff 0%, #fd7914 0%, #f67513 0%, #000000 100%);">
       <router-outlet/>
+<!--
+      <div class="d-md-none justify-content-start mt-2 mb-5 z-3 pt-2 border-1 border-black border-top"
+           style="margin-left: 36px; margin-right: 36px;">
+        <div class="dropend">
+          <button class="btn text-black-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ getSelectedLanguage().name }}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-horizontal">
+            @for (language of getLanguages(); track language.id) {
+              <li>
+                <a class="dropdown-item" (click)="selectLanguage(language.id)">
+                  {{ language.name }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+-->
     </div>
   </div>
 }
+
+<div class="d-none d-md-flex fixed-bottom justify-content-end z-3" style="margin-right: 30px; margin-bottom: 30px;">
+  <div class="dropup">
+    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{ getSelectedLanguage().name }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      @for (language of getLanguages(); track language.id) {
+        <li>
+          <a class="dropdown-item" (click)="selectLanguage(language.id)">{{ language.name }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</div>
+

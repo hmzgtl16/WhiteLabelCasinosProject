@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
 import {filter} from 'rxjs';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
   ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
@@ -39,7 +41,7 @@ export class Sidebar implements OnInit {
   }
 
   navigateToHome(): void {
-    this.router.navigate(['/home']).then();
+    this.router.navigate(['..']).then();
   }
   navigateToCommunity() {
     this.router.navigate(['/community']).then();

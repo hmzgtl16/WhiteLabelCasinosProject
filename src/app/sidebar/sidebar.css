@@ -1,4 +1,5 @@
 .sidebar {
+  width: 400px;
   background: #171717;
   background-blend-mode: normal;
   border-color: #171717;
@@ -16,9 +17,10 @@
   color: #fcfcfc;
   text-decoration: none;
   transition: all 0.3s ease;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-right: 10px;
   cursor: pointer;
+  height: 40px;
 
   span {
     font-size: 14px;
