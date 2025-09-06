@@ -17,9 +17,7 @@
                     <p class="title text-uppercase">
                       {{ 'home-text-panel-title' | translate }}
                     </p>
-                    <p class="description">
-                      {{ 'home-text-panel-description' | translate }}
-                    </p>
+                    <p class="description" [innerHTML]="'home-text-panel-description' | translate"></p>
                   </div>
                 </div>
                 <div class="text-card-icons text-start text-md-end flex-shrink-1">

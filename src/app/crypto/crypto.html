@@ -3,9 +3,7 @@
     <!-- Hero Section -->
     <div>
       <div class="d-flex flex-row" style="margin-bottom: 30px">
-        <h1 class="hero-title w-100">
-          {{ 'crypto-hero-title' | translate }}
-        </h1>
+        <h1 class="hero-title w-100">{{ 'crypto-hero-title' | translate }}</h1>
         <div (click)="navigateBack()" class="d-none d-md-block hero-icon flex-shrink-1">
           <svg xmlns="http://www.w3.org/2000/svg"
                height="24px"
@@ -16,90 +14,58 @@
         </div>
       </div>
       <div class="col-md-10">
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p1' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p2' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p3' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p4' | translate }}
-        </p>
-        <p class="hero-description fw-bold">
-          {{ 'crypto-hero-description-p5' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p6' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p7' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p8' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p9' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p10' | translate }}
-        </p>
-        <p class="hero-description fw-bold">
-          {{ 'crypto-hero-description-p11' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p12' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p13' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p14' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p15' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p16' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p17' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p18' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p19' | translate }}
-        </p>
-        <p class="hero-description fw-bold">
-          {{ 'crypto-hero-description-p20' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p21' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p22' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p23' | translate }}
-        </p>
-        <p class="hero-description fw-bold">
-          {{ 'crypto-hero-description-p24' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p25' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p26' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p27' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'crypto-hero-description-p28' | translate }}
-        </p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p1' | translate"></p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p2' | translate"></p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p3' | translate"></p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p4' | translate"></p>
+        <p class="hero-description fs-6 fw-bold">{{ 'crypto-hero-description-p5' | translate }}</p>
+
+        <ul class="list-group list-group-flush">
+          <li>{{ 'crypto-hero-description-p6' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p7' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p8' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p9' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p10' | translate }}</li>
+        </ul>
+
+        <p class="hero-description fs-6 fw-bold">{{ 'crypto-hero-description-p11' | translate }}</p>
+
+        <ol class="list-group list-group-flush">
+          <li [innerHTML]="'crypto-hero-description-p12' | translate"></li>
+          <p class="hero-description" [innerHTML]="'crypto-hero-description-p13' | translate"></p>
+          <ul class="list-group list-group-flush">
+            <li>{{ 'crypto-hero-description-p14-1' | translate }}</li>
+            <li>{{ 'crypto-hero-description-p14-2' | translate }}</li>
+            <li>{{ 'crypto-hero-description-p14-3' | translate }}</li>
+          </ul>
+          <p class="hero-description" [innerHTML]="'crypto-hero-description-p15' | translate"></p>
+
+          <li [innerHTML]="'crypto-hero-description-p16' | translate"></li>
+          <p class="hero-description" [innerHTML]="'crypto-hero-description-p17' | translate"></p>
+
+          <li [innerHTML]="'crypto-hero-description-p18' | translate"></li>
+          <p class="hero-description" [innerHTML]="'crypto-hero-description-p19' | translate"></p>
+        </ol>
+
+        <p class="hero-description fs-6 fw-bold">{{ 'crypto-hero-description-p20' | translate }}</p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p21' | translate"></p>
+
+        <ul class="list-group list-group-flush">
+          <li>{{ 'crypto-hero-description-p22-1' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p22-2' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p22-3' | translate }}</li>
+        </ul>
+
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p23' | translate"></p>
+        <p class="hero-description fs-6 fw-bold">{{ 'crypto-hero-description-p24' | translate }}</p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p25' | translate"></p>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p26' | translate"></p>
+        <ul class="list-group list-group-flush">
+          <li>{{ 'crypto-hero-description-p27-1' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p27-2' | translate }}</li>
+          <li>{{ 'crypto-hero-description-p27-3' | translate }}</li>
+        </ul>
+        <p class="hero-description" [innerHTML]="'crypto-hero-description-p28' | translate"></p>
       </div>
     </div>
   </div>

@@ -45,6 +45,26 @@
   }
 }
 
+/* Bold brand names only in Spanish locale */
+html[lang="es"] .hero-description .brand-names {
+  font-weight: 700;
+}
+
+.list-group {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+
+  li {
+    font-size: 14px;
+    color: #fcfcfc;
+  }
+
+  li::marker {
+    color: #fcfcfc;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 34px;

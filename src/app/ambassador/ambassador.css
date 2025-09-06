@@ -39,9 +39,25 @@
   line-height: 1.6;
   color: #fcfcfc;
   margin-bottom: 20px;
+}
 
-  span {
-    color: #fd7914;
+.unbold-text {
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.list-group {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+
+  li {
+    font-size: 14px;
+    color: #fcfcfc;
+  }
+
+  li::marker {
+    color: #fcfcfc;
   }
 }
 

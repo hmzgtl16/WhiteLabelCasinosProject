@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {TranslatePipe} from '@ngx-translate/core';
 
@@ -8,7 +8,8 @@ import {TranslatePipe} from '@ngx-translate/core';
     TranslatePipe
   ],
   templateUrl: './offers.html',
-  styleUrl: './offers.css'
+  styleUrl: './offers.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class Offers {
 

@@ -34,12 +34,8 @@
 .hero-description {
   font-size: 18px;
   color: #fcfcfc;
+  max-width: 860px;
   margin-bottom: 120px;
-
-
-  a {
-    color: #fd7914;
-  }
 }
 
 .section-title {

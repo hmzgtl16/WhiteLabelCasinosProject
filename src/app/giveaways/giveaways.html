@@ -16,36 +16,18 @@
         </div>
       </div>
       <div class="col-md-10">
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p1' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p2' | translate }}
-        </p>
-        <p class="hero-description fw-bold">
-          {{ 'giveaways-hero-description-p3' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p4' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p5' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p6' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p7' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p8' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p9' | translate }}
-        </p>
-        <p class="hero-description">
-          {{ 'giveaways-hero-description-p10' | translate }}
-        </p>
+        <p class="hero-description" [innerHTML]="'giveaways-hero-description-p1' | translate"></p>
+        <p class="hero-description" [innerHTML]="'giveaways-hero-description-p2' | translate"></p>
+        <p class="hero-description fs-6 fw-bold">{{ 'giveaways-hero-description-p3' | translate }}</p>
+        <ul class="list-group list-group-flush">
+          <li>{{ 'giveaways-hero-description-p4' | translate }}</li>
+          <li>{{ 'giveaways-hero-description-p5' | translate }}</li>
+          <li>{{ 'giveaways-hero-description-p6' | translate }}</li>
+          <li>{{ 'giveaways-hero-description-p7' | translate }}</li>
+        </ul>
+        <p class="hero-description" [innerHTML]="'giveaways-hero-description-p8' | translate"></p>
+        <p class="hero-description" [innerHTML]="'giveaways-hero-description-p9' | translate"></p>
+        <p class="hero-description" [innerHTML]="'giveaways-hero-description-p10' | translate"></p>
       </div>
     </div>
   </div>

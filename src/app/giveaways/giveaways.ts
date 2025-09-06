@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {TranslatePipe} from "@ngx-translate/core";
 
@@ -6,10 +6,10 @@ import {TranslatePipe} from "@ngx-translate/core";
   selector: 'app-giveaways',
     imports: [
         TranslatePipe
-
     ],
   templateUrl: './giveaways.html',
-  styleUrl: './giveaways.css'
+  styleUrl: './giveaways.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class Giveaways {
 

@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
@@ -9,7 +9,8 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
     TranslatePipe
   ],
   templateUrl: './community.html',
-  styleUrl: './community.css'
+  styleUrl: './community.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class Community {
 

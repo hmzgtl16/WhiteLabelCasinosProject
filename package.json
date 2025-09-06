@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve --port=4200",
     "build": "ng build",
-    "prod": "ng build --configuration production",
+    "prod": "ng build  --configuration production --base-href \"https://www.whitelabelproject.net/\"",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ghpages": "npx angular-cli-ghpages --dir=dist/WhiteLabelCasinosProject/browser"
   },
   "prettier": {
     "overrides": [
